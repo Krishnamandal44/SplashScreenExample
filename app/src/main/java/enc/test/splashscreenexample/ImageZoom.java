@@ -1,25 +1,17 @@
 package enc.test.splashscreenexample;
 
-import android.content.Context;
-import android.graphics.Canvas;
 import android.graphics.Matrix;
 import android.graphics.PointF;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.FloatMath;
 import android.util.Log;
-import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
-import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
-public class Main3Activity extends AppCompatActivity implements View.OnTouchListener {
+public class ImageZoom extends AppCompatActivity implements View.OnTouchListener {
 
 
     private static final String TAG = "Touch";
@@ -47,13 +39,13 @@ public class Main3Activity extends AppCompatActivity implements View.OnTouchList
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main3);
+        setContentView(R.layout.activity_image_zoom);
         image=getIntent().getExtras().getInt("image");
         ImageView view=(ImageView)findViewById(R.id.view);
-        Picasso.with(Main3Activity.this).load(image).into(view);
-        view.setOnTouchListener(Main3Activity.this);
+        Picasso.with(ImageZoom.this).load(image).into(view);
+        view.setOnTouchListener(ImageZoom.this);
         /*ImageView th=(ImageView)findViewById(R.id.view);
-        Picasso.with(Main3Activity.this).load(image).into(th);*/
+        Picasso.with(ImageZoom.this).load(image).into(th);*/
 
     }
     @Override

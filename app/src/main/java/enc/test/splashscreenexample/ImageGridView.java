@@ -4,18 +4,11 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.BaseAdapter;
-import android.widget.Button;
 import android.widget.GridView;
-import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.ArrayList;
-
-public class Main2Activity extends AppCompatActivity {
+public class ImageGridView extends AppCompatActivity {
     GridView grid;
     String[] web = {
             "Google",
@@ -56,9 +49,9 @@ public class Main2Activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main2);
+        setContentView(R.layout.activity_image_gridview);
 
-        CustomGrid adapter = new CustomGrid(Main2Activity.this, web, imageId);
+        CustomGrid adapter = new CustomGrid(ImageGridView.this, web, imageId);
         grid=(GridView)findViewById(R.id.gv);
         grid.setAdapter(adapter);
         grid.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -66,8 +59,8 @@ public class Main2Activity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view,
                                     int position, long id) {
-                Toast.makeText(Main2Activity.this, "You Clicked at " +web[+ position], Toast.LENGTH_SHORT).show();
-                Intent intent=new Intent(Main2Activity.this,Main3Activity.class);
+                Toast.makeText(ImageGridView.this, "You Clicked at " +web[+ position], Toast.LENGTH_SHORT).show();
+                Intent intent=new Intent(ImageGridView.this,ImageZoom.class);
                 String image1=web[+ position];
                 intent.putExtra("image",imageId[+ position]);
                 startActivity(intent);
