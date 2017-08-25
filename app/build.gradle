@@ -27,7 +27,14 @@ dependencies {
     //CardView
     compile 'com.android.support:appcompat-v7:26.+'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
+//For cardView
     compile 'com.android.support:cardview-v7:26.+'
+//For picasso
     compile 'com.squareup.picasso:picasso:2.5.2'
+//For PhotoView
+    compile 'com.github.chrisbanes.photoview:library:+'
+//For ION
+    compile 'com.koushikdutta.ion:ion:2.+'
+
     testCompile 'junit:junit:4.12'
 }
