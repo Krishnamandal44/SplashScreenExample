@@ -8,9 +8,21 @@ import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class ImageGridView extends AppCompatActivity {
     GridView grid;
+    private List<ImagePojo> homeServiceListPojos = new ArrayList<>();;
+    private ImagePojo homeServiceListPojo;
     String[] web = {
+            "Rose",
+            "image",
+            "Picasso",
+            "Ion",
+            "Bitbucket",
+            "Drive",
+            "Paytm",
             "Google",
             "Github",
             "Instagram",
@@ -27,6 +39,13 @@ public class ImageGridView extends AppCompatActivity {
 
     } ;
     String image[]={
+            "https://static.pexels.com/photos/67636/rose-blue-flower-rose-blooms-67636.jpeg",
+            "http://www.qygjxz.com/data/out/8/4421389-android-wallpaper.png",
+            "https://www.androidcentral.com/sites/androidcentral.com/files/styles/w550h500/public/wallpapers/dc-superhero-suits-a8o.jpg?itok=KSU3SFs-",
+            "http://www.planwallpaper.com/static/images/11-sea-beach-sand-wallpaper_sf9i1b6.jpg",
+            "http://www.planwallpaper.com/static/images/303836.jpg",
+            "http://www.planwallpaper.com/static/images/colorful-triangles-background.jpg",
+            "http://www.planwallpaper.com/static/images/i-should-buy-a-boat.jpg",
         "https://www.w3schools.com/css/img_fjords.jpg",
         "https://i1.wp.com/techbeasts.com/wp-content/uploads/2016/12/Best-Merry-Christmas-HD-Greetings-Wallpapers-free-by-newwallpapershd.com_.jpg?resize=100%2C100",
         "https://cdn.allwallpaper.in/wallpapers/100x100/4578/ethernet-cable-cables-computer-science-technology-optical-fiber-100x100-wallpaper.jpg",
@@ -39,14 +58,13 @@ public class ImageGridView extends AppCompatActivity {
         "https://cdn0.iconfinder.com/data/icons/social-flat-rounded-rects/512/facebook-256.png",
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGSocORFPTHNmCeEzr7JHk_pYGjhBr6KGOac4EqNuFBe183PM_w0ZZIg",
        "https://galleryofgod.files.wordpress.com/2014/03/wpid-ganesh20wallpaper201.jpg?w=672&h=372&crop=1",
-            "https://cdn0.iconfinder.com/data/icons/social-flat-rounded-rects/512/youtube_v2-256.png"
+            "http://www.underconsideration.com/brandnew/archives/flipkart_logo_detail_icon.jpg"
 };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_image_gridview);
-
         CustomGridAdapter adapter = new CustomGridAdapter(ImageGridView.this, web, image);
         grid=(GridView)findViewById(R.id.gv);
         grid.setAdapter(adapter);

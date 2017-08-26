@@ -61,15 +61,22 @@ public class CustomGridAdapter extends BaseAdapter {
             textView.setText(web[position]);
 //            imageView.setImageResource(Integer.parseInt(Imageid[position]));
             String url = Imageid[position];
-            //Picasso.with(mContext).load(url).into(imageView);
-            Ion.with(imageView)
-                    .placeholder(R.drawable.placeholder)//image when loading
-                    .error(R.drawable.error)                            //image if error/ no connection/ wrong url etc
-                    //uncomment this line and set imageURL with wrong URL and see error image animation
-//                .animateLoad(AnimationUtils.loadAnimation(getApplicationContext(), R.anim.spin_animation))
-                    //this defines animation of the successfully loaded image (animate it in)
-                    .animateIn(AnimationUtils.loadAnimation(mContext,R.anim.anim_fade_in))
-                    .load(url);
+            Picasso.with(mContext)
+                    .load(url)
+                    .placeholder(R.drawable.placeholder)
+                    .error(R.drawable.error)
+                   // .getImage_url())
+                     .resize(250, 180).centerCrop()
+                    .into(imageView);
+         //   Picasso.with(mContext).load(url).into(imageView);
+//            Ion.with(imageView)
+//                    .placeholder(R.drawable.placeholder)//image when loading
+//                    .error(R.drawable.error)                            //image if error/ no connection/ wrong url etc
+//                    //uncomment this line and set imageURL with wrong URL and see error image animation
+////                .animateLoad(AnimationUtils.loadAnimation(getApplicationContext(), R.anim.spin_animation))
+//                    //this defines animation of the successfully loaded image (animate it in)
+//                    .animateIn(AnimationUtils.loadAnimation(mContext,R.anim.anim_fade_in))
+//                    .load(url);
         } else {
             grid = (View) convertView;
         }
