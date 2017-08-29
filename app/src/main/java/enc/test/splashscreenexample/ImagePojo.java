@@ -5,7 +5,7 @@ package enc.test.splashscreenexample;
  */
 
 public class ImagePojo {
-    int icon;
+    String icon;
     String id;
 
     public void setId(String id) {
@@ -19,17 +19,17 @@ public class ImagePojo {
 
     String title;
 
-    public ImagePojo(String id, String title, int icon) {
+    public ImagePojo(String id, String title, String icon) {
         this.id = id;
         this.icon = icon;
         this.title = title;
     }
 
-    public int getIcon() {
+    public String getIcon() {
         return icon;
     }
 
-    public void setIcon(int icon) {
+    public void setIcon(String icon) {
         this.icon = icon;
     }
 

@@ -66,7 +66,12 @@ public class ImageGridView extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_image_gridview);
         CustomGridAdapter adapter = new CustomGridAdapter(ImageGridView.this, web, image);
+        for (int i = 0; i<image.length; i++){
+            homeServiceListPojo = new ImagePojo(""+i, web[i], image[i]);
+            homeServiceListPojos.add(homeServiceListPojo);
+        }
         grid=(GridView)findViewById(R.id.gv);
+
         grid.setAdapter(adapter);
         grid.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
